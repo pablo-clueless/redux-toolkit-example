@@ -8,7 +8,7 @@ const Modal = () => {
     const dispatch = useDispatch()
 
   return (
-    <aside className='modal-container'>
+    <aside className='overlay'>
         <div className="modal">
             <h4>Remove all items from your cart?</h4>
             <div className="btn-container">

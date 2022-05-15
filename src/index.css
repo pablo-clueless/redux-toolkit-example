@@ -124,11 +124,6 @@ p {
 Navbar
 ===============
 */
-.loading {
-  text-align: center;
-  margin-top: 5rem;
-}
-
 nav {
   background: var(--clr-primary);
   padding: 1.25rem 2rem;
@@ -252,6 +247,13 @@ Cart Item
   grid-template-columns: auto 1fr auto;
   grid-column-gap: 1.5rem;
   margin: 1.5rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+.cart-item:hover {
+  box-shadow: 1px 1px 5px var(--clr-grey-1);
 }
 
 .cart-item img {
@@ -314,7 +316,12 @@ hr {
   border-width: 0.25px;
 }
 
-.modal-container {
+/*
+=============== 
+Modal
+===============
+*/
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -349,4 +356,23 @@ hr {
 .btn-container {
   display: flex;
   justify-content: space-around;
+}
+
+/*
+=============== 
+Loading Spinner
+===============
+*/
+.loading {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid var(--clr-primary);
+  border-top-color: var(--clr-white);
+  animation: spin 1.5s infinite ease;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
 }
