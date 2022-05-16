@@ -254,6 +254,7 @@ Cart Item
 
 .cart-item:hover {
   box-shadow: 1px 1px 5px var(--clr-grey-1);
+  transform: scale(1.05);
 }
 
 .cart-item img {
