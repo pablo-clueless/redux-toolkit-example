@@ -103,7 +103,7 @@ p {
   text-transform: uppercase;
   background: var(--clr-primary);
   color: var(--clr-white);
-  padding: 0.375rem 0.75rem;
+  padding: 0.5rem 1rem;
   letter-spacing: var(--spacing);
   display: inline-block;
   font-weight: 700;
@@ -117,6 +117,22 @@ p {
 .btn:hover {
   color: var(--clr-primary);
   background: var(--clr-primary-light);
+}
+
+.btn:disabled {
+  background: var(--clr-grey-1);
+}
+
+.btn:disabled:hover {
+  color: var(--clr-grey-10);
+}
+
+.stack {
+  margin: 3rem 0;
+}
+
+.icon {
+  margin: 0 0.75rem;
 }
 
 /*
@@ -233,6 +249,28 @@ Cart
 .confirm-btn {
   border-color: var(--clr-primary);
   color: var(--clr-primary);
+  border-radius: var(--radius);
+}
+
+.checkout-btn {
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  margin-right: 2rem;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+}
+
+.google-btn:hover {
+  background: var(--clr-grey-10);
+}
+
+.google-btn:disabled {
+  color: var(--clr-grey-10);
 }
 
 
@@ -376,4 +414,85 @@ Loading Spinner
 @keyframes spin {
   0% { transform: rotate(0deg);}
   100% { transform: rotate(360deg);}
+}
+
+/*
+===============
+Error
+===============
+*/
+.error {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+.error h3 {
+  color: var(--clr-red-dark);
+}
+
+/*
+===============
+Login & User Pages
+===============
+*/
+.login-page,
+.user-page,
+.form {
+  display: grid;
+  place-items: center;
+}
+
+.login-page {
+  padding: 3rem 0;
+}
+
+.form {
+  gap: 1rem;
+}
+
+.form-control {
+  width: 300px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--clr-primary);
+  margin: 1rem 0;
+  position: relative;
+}
+
+.form-control label {
+  background: var(--clr-grey-10);
+  color: var(--clr-primary);
+  position: absolute;
+  top: -50%;
+  left: 4%;
+  padding: 0 0.5rem;
+}
+
+.form-control input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: var(--clr-grey-1);
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+}
+
+.form-control input:focus {
+  border: none;
+  outline: none;
+}
+
+.heading {
+  margin: 2rem 0;
+}
+
+.heading span {
+  text-transform: lowercase;
 }

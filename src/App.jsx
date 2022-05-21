@@ -1,30 +1,19 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 
-import { CartContainer, Loading, Modal, Navbar } from './components'
-import { calculateTotal, getCartItems } from './redux/features/cart/cartSlice'
+import { Home, Login, User } from './pages'
+import { Navbar } from './components'
 
 const App = () => {
-  const { cartItems, isLoading } = useSelector(state => state.cart)
-  const { isOpen } = useSelector(state => state.modal)
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(getCartItems())
-  },[])
-
-  useEffect(() => {
-    dispatch(calculateTotal())
-  },[cartItems])
-
-  if(isLoading) return <Loading />
-
   return (
-    <div>
-      {isOpen && <Modal />}
-      <Navbar />
-      <CartContainer />
-    </div>
+    <>
+    <Navbar />
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/user/:id' element={<User />} />
+    </Routes>
+    </>
   )
 }
 
